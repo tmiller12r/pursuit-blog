@@ -24,7 +24,7 @@ Here are the routes that must be implemented. Remember, **PRIVATE** routes imply
 ## USER
 
 #### ✅ POST /user 
-#### ❌ GET /user/:user_id
+#### ✅ GET /user/:user_id
 #### ❌ PUT /user/:user_id
 #### ❌ DEL /user/:user_id
 #### ✅ GET /user/:user_id/posts
