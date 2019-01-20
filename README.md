@@ -54,7 +54,7 @@ Here are the routes that must be implemented. Remember, **PRIVATE** routes imply
 ## User
 
 ```sql
-CREATE TABLE user (
+CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username VARCHAR (100) UNIQUE NOT NULL,
   email VARCHAR (100) UNIQUE NOT NULL,
@@ -66,9 +66,9 @@ CREATE TABLE user (
 ## Post
 
 ```sql
-CREATE TABLE post (
+CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
-  author INT REFERENCES user(id) NOT NULL,
+  author INT REFERENCES users(id) NOT NULL,
   title VARCHAR (100) NOT NULL,
   body TEXT NOT NULL
 );
@@ -79,7 +79,7 @@ CREATE TABLE post (
 CREATE TABLE comment (
   id SERIAL PRIMARY KEY,
   author INT REFERENCES users(id) NOT NULL,
-  post_id INT REFERENCES post(id) NOT NULL,
+  post_id INT REFERENCES posts(id) NOT NULL,
   title VARCHAR (100) NOT NULL,
   body TEXT NOT NULL
 );
